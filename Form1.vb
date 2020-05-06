@@ -4,6 +4,8 @@ Public Class Form1
         Dim conexion As MySqlConnection
         conexion = New MySqlConnection
         Dim cmd As New MySqlCommand
+        Dim ds As DataSet = New DataSet
+        Dim adaptador As MySqlDataAdapter = New MySqlDataAdapter
 
         conexion.ConnectionString = "server=localhost; database=encuesta; Uid=root; pwd=135790;"
         If (txtNombre.Text <> "") And (txtApellido.Text <> "") And (cboxSerie.Text <> "") Then
@@ -25,11 +27,17 @@ Public Class Form1
                 txtNombre.Focus()
                 txtApellido.Clear()
                 cboxSerie.SelectedIndex = -1
+                cmd.CommandText = "SELECT * FROM encuesta_series ORDER BY id ASC"
+                adaptador.SelectCommand = cmd
+                adaptador.Fill(ds, "Tabla")
+                grdEncuesta.DataSource = ds
+                grdEncuesta.DataMember = "Tabla"
+
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
         Else
-            MsgBox("Por favor rellene los datos necesarios"
+            MsgBox("Por favor rellene los datos necesarios")
         End If
     End Sub
 End Class

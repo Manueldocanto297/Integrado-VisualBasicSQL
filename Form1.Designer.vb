@@ -30,18 +30,20 @@ Partial Class Form1
         Me.cboxSerie = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.grdEncuesta = New System.Windows.Forms.DataGridView()
+        CType(Me.grdEncuesta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(150, 65)
+        Me.txtNombre.Location = New System.Drawing.Point(572, 65)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(206, 20)
         Me.txtNombre.TabIndex = 0
         '
         'txtApellido
         '
-        Me.txtApellido.Location = New System.Drawing.Point(151, 91)
+        Me.txtApellido.Location = New System.Drawing.Point(573, 91)
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(206, 20)
         Me.txtApellido.TabIndex = 1
@@ -50,7 +52,7 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(88, 65)
+        Me.Label1.Location = New System.Drawing.Point(510, 65)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 16)
         Me.Label1.TabIndex = 2
@@ -60,7 +62,7 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(88, 91)
+        Me.Label2.Location = New System.Drawing.Point(510, 91)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 16)
         Me.Label2.TabIndex = 3
@@ -70,7 +72,7 @@ Partial Class Form1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(115, 29)
+        Me.Label3.Location = New System.Drawing.Point(537, 29)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(264, 18)
         Me.Label3.TabIndex = 4
@@ -82,7 +84,7 @@ Partial Class Form1
         Me.cboxSerie.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxSerie.FormattingEnabled = True
         Me.cboxSerie.Items.AddRange(New Object() {"La Casa de Papel", "Poco Ortodoxa", "Game of Thrones", "Stranger Things", "Ninguna de las anteriores"})
-        Me.cboxSerie.Location = New System.Drawing.Point(150, 118)
+        Me.cboxSerie.Location = New System.Drawing.Point(572, 118)
         Me.cboxSerie.Name = "cboxSerie"
         Me.cboxSerie.Size = New System.Drawing.Size(207, 24)
         Me.cboxSerie.TabIndex = 5
@@ -91,7 +93,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(102, 119)
+        Me.Label4.Location = New System.Drawing.Point(524, 119)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(42, 16)
         Me.Label4.TabIndex = 6
@@ -99,19 +101,30 @@ Partial Class Form1
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(212, 145)
+        Me.btnAceptar.Location = New System.Drawing.Point(634, 148)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
+        Me.btnAceptar.Size = New System.Drawing.Size(80, 32)
         Me.btnAceptar.TabIndex = 7
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = True
+        '
+        'grdEncuesta
+        '
+        Me.grdEncuesta.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        Me.grdEncuesta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grdEncuesta.GridColor = System.Drawing.SystemColors.Control
+        Me.grdEncuesta.Location = New System.Drawing.Point(28, 29)
+        Me.grdEncuesta.Name = "grdEncuesta"
+        Me.grdEncuesta.Size = New System.Drawing.Size(469, 182)
+        Me.grdEncuesta.TabIndex = 8
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.ClientSize = New System.Drawing.Size(492, 198)
+        Me.ClientSize = New System.Drawing.Size(814, 238)
+        Me.Controls.Add(Me.grdEncuesta)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.cboxSerie)
@@ -122,6 +135,7 @@ Partial Class Form1
         Me.Controls.Add(Me.txtNombre)
         Me.Name = "Form1"
         Me.Text = "Encuesta Sobre Series"
+        CType(Me.grdEncuesta, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -135,4 +149,5 @@ Partial Class Form1
     Friend WithEvents cboxSerie As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents btnAceptar As Button
+    Friend WithEvents grdEncuesta As DataGridView
 End Class
